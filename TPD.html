@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEO GENESIS | Next Gen Creators Agency</title>
+  <!-- SEO 標籤：讓分享連結時更有質感 -->
+  <meta name="description" content="TPD Esport - 致力於挖掘頂尖電競選手與內容創作者，打造全亞洲最具影響力的數位文化品牌。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff003c; /* 仿 CR 的鮮紅點綴 */
+      --bg-dark: #0a0a0a;
+      --card-bg: #151515;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: white;
+      font-family: 'Noto Sans TC', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-oswald { font-family: 'Oswald', sans-serif; }
+
+    /* 霓虹發光效果 */
+    .neon-text {
+      text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+    }
+
+    .neon-border:hover {
+      box-shadow: 0 0 15px var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* 英雄區塊背景動畫 */
+    .hero-gradient {
+      background: radial-gradient(circle at center, rgba(255, 0, 60, 0.15) 0%, rgba(10, 10, 10, 1) 70%);
+    }
+
+    /* 滾動動畫 */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .member-card img {
+      transition: transform 0.5s ease;
+    }
+
+    .member-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .nav-link::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width .3s;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* 手機選單動畫 */
+    #mobileMenu {
+      transition: transform 0.3s ease-in-out;
+    }
+    #mobileMenu.hidden-menu {
+      transform: translateX(100%);
+    }
+  </style>
+</head>
+<body>
+
+<!-- 導航欄 -->
+<nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-2xl font-black font-oswald tracking-tighter italic">
+      TPD<span class="text-[#ff003c]">ESPORTS</span>
+    </div>
+    <div class="hidden md:flex space-x-8 font-bold text-sm tracking-widest uppercase">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#members" class="nav-link">Members</a>
+      <a href="#recruit" class="nav-link">Recruit</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <!-- 手機版選單按鈕 -->
+    <button id="menuBtn" class="md:hidden text-2xl focus:outline-none"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- 手機版側欄選單 -->
+<div id="mobileMenu" class="fixed inset-0 z-[60] bg-black hidden-menu md:hidden flex flex-col items-center justify-center space-y-8 text-2xl font-bold font-oswald">
+  <button id="closeBtn" class="absolute top-6 right-6 text-3xl"><i class="fas fa-times"></i></button>
+  <a href="#about" class="mobile-link">ABOUT</a>
+  <a href="#members" class="mobile-link">MEMBERS</a>
+  <a href="#recruit" class="mobile-link">RECRUIT</a>
+  <a href="#contact" class="mobile-link">CONTACT</a>
+</div>
+
+<!-- 英雄區塊 -->
+<section class="relative h-screen flex items-center justify-center hero-gradient overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <!-- 模擬背景裝飾圖形 -->
+    <div class="absolute top-1/4 left-10 w-64 h-64 bg-[#ff003c]/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative z-10 text-center px-4">
+    <h2 class="text-xl md:text-2xl font-bold tracking-[0.5em] text-[#ff003c] mb-4 font-oswald reveal">WE ARE THE NEW STANDARD</h2>
+    <h1 class="text-6xl md:text-9xl font-black italic font-oswald mb-8 reveal" style="transition-delay: 0.2s;">TPD ESPORTS</h1>
+    <p class="max-w-2xl mx-auto text-gray-400 text-lg mb-10 reveal" style="transition-delay: 0.4s;">
+      致力於挖掘頂尖電競選手與內容創作者，打造全亞洲最具影響力的數位文化品牌。
+    </p>
+    <div class="reveal" style="transition-delay: 0.6s;">
+      <a href="#recruit" class="inline-block bg-[#ff003c] text-white px-10 py-4 font-bold rounded-sm hover:bg-white hover:text-black transition-colors duration-300">
+        JOIN OUR TEAM
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+    <i class="fas fa-chevron-down text-gray-500"></i>
+  </div>
+</section>
+
+<!-- 關於我們 -->
+<section id="about" class="py-24 px-6 bg-zinc-900/30">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <div class="reveal">
+      <h3 class="text-4xl font-black font-oswald mb-6">VISION</h3>
+      <p class="text-gray-300 leading-relaxed text-lg mb-6">
+        TPD ESPORTS 不僅是一間創作者公司，我們是一個由熱情與專業驅動的生態系。
+      </p>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="border-l-4 border-[#ff003c] pl-4 py-2">
+          <h4 class="font-bold text-xl">100+</h4>
+          <p class="text-gray-500 text-sm">月總觀看數</p>
+        </div>
+        <div class="border-l-4 border-[#ff003c] pl-4 py-2">
+          <h4 class="font-bold text-xl">1+</h4>
+          <p class="text-gray-500 text-sm">旗下創作者</p>
+        </div>
+      </div>
+    </div>
+    <div class="relative reveal" style="transition-delay: 0.3s;">
+      <div class="aspect-video bg-zinc-800 rounded-lg overflow-hidden flex items-center justify-center border border-white/10 group cursor-pointer">
+        <i class="fas fa-play text-5xl text-[#ff003c] group-hover:scale-125 transition-transform"></i>
+        <p class="absolute bottom-4 left-4 font-bold tracking-widest text-xs opacity-50">PROMOTION REEL 2024</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 成員展示 -->
+<section id="members" class="py-24 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex justify-between items-end mb-12 reveal">
+      <div>
+        <h3 class="text-5xl font-black font-oswald italic">MEMBERS</h3>
+        <p class="text-[#ff003c] font-bold tracking-widest">STREAMERS & PRO PLAYERS</p>
+      </div>
+      <a href="#" class="text-gray-500 hover:text-white transition-colors">VIEW ALL <i class="fas fa-arrow-right ml-2"></i></a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- 成員 1 -->
+      <div class="member-card relative group overflow-hidden bg-zinc-900 reveal" style="transition-delay: 0.1s;">
+        <div class="aspect-[3/4] overflow-hidden">
+          <img src="https://pbs.twimg.com/media/HE540HFaQAAl9GP?format=png&name=900x900" alt="Member" class="w-full h-full object-cover grayscale group-hover:grayscale-0">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+        <div class="absolute bottom-0 p-6 w-full">
+          <p class="text-[#ff003c] text-xs font-bold mb-1">FPS DIVISION</p>
+          <h4 class="text-2xl font-black font-oswald italic mb-4">THE_Demons</h4>
+          <div class="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i class="fab fa-twitch hover:text-[#ff003c] cursor-pointer"></i>
+            <i class="fab fa-youtube hover:text-[#ff003c] cursor-pointer"></i>
+            <i class="fab fa-x-twitter hover:text-[#ff003c] cursor-pointer"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 成員 2 -->
+      <div class="member-card relative group overflow-hidden bg-zinc-900 reveal" style="transition-delay: 0.2s;">
+        <div class="aspect-[3/4] overflow-hidden">
+          <img src="https://pbs.twimg.com/media/HFIU_qKaUAAixhp?format=jpg&name=small" alt="Member" class="w-full h-full object-cover grayscale group-hover:grayscale-0">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+        <div class="absolute bottom-0 p-6 w-full">
+          <p class="text-[#ff003c] text-xs font-bold mb-1">STREAMER</p>
+          <h4 class="text-2xl font-black font-oswald italic mb-4">DONG</h4>
+          <div class="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i class="fab fa-twitch hover:text-[#ff003c] cursor-pointer"></i>
+            <i class="fab fa-youtube hover:text-[#ff003c] cursor-pointer"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 成員 3 -->
+      <div class="member-card relative group overflow-hidden bg-zinc-900 reveal" style="transition-delay: 0.3s;">
+        <div class="aspect-[3/4] overflow-hidden">
+          <img src="https://pbs.twimg.com/media/GvyBpPyakAAd93v?format=jpg&name=large" alt="Member" class="w-full h-full object-cover grayscale group-hover:grayscale-0">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+        <div class="absolute bottom-0 p-6 w-full">
+          <p class="text-[#ff003c] text-xs font-bold mb-1">PRO PLAYER</p>
+          <h4 class="text-2xl font-black font-oswald italic mb-4">東巴瑞</h4>
+          <div class="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity">
+            <a href="https://www.twitch.tv/thewhitesky426" target="_blank" class="fab fa-twitch hover:text-[#ff003c] cursor-pointer"></a>
+            <a href="https://www.youtube.com/@barry1324" target="_blank" class="fab fa-youtube hover:text-[#ff003c] cursor-pointer"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 招募佔位 -->
+      <div class="border-2 border-dashed border-zinc-800 flex flex-col items-center justify-center p-8 text-center hover:border-[#ff003c] transition-colors reveal" style="transition-delay: 0.4s;">
+        <i class="fas fa-plus-circle text-4xl mb-4 text-zinc-700"></i>
+        <h4 class="font-bold mb-2">NEXT CREATOR?</h4>
+        <p class="text-sm text-gray-500 mb-6">再想就沒機會了</p>
+        <a href="#recruit" class="text-xs font-bold border border-white px-4 py-2 hover:bg-white hover:text-black transition-all">JOIN US</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 招募區塊 -->
+<section id="recruit" class="py-24 px-6 bg-[#ff003c] text-black">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <h3 class="text-6xl font-black font-oswald italic mb-6">RECRUITMENT</h3>
+      <p class="text-black/80 font-bold text-xl mb-8 leading-relaxed">
+        如果你渴望站在舞台中央，<br>
+        如果你對電競或內容創作有著無人能及的執著。<br>
+        TPD ESPORTS 將提供你最強大的後盾支援。
+      </p>
+      <ul class="space-y-4 font-bold">
+        <li><i class="fas fa-check mr-2"></i> 影音剪輯支援</li>
+        <li><i class="fas fa-check mr-2"></i> 企業贊助媒合</li>
+        <li><i class="fas fa-check mr-2"></i> 法務與公關保護</li>
+        <li><i class="fas fa-check mr-2"></i> 品牌周邊開發</li>
+      </ul>
+    </div>
+    <div class="bg-black text-white p-8 md:p-12 rounded-sm shadow-2xl reveal" style="transition-delay: 0.3s;">
+      <form id="recruitForm" class="space-y-6">
+        <div>
+          <label class="block text-xs font-bold tracking-widest text-gray-400 mb-2 uppercase">Full Name / 姓名</label>
+          <input type="text" class="w-full bg-zinc-900 border border-zinc-800 p-3 focus:border-[#ff003c] outline-none transition-colors" required>
+        </div>
+        <div>
+          <label class="block text-xs font-bold tracking-widest text-gray-400 mb-2 uppercase">Platform URL / 頻道連結</label>
+          <input type="url" class="w-full bg-zinc-900 border border-zinc-800 p-3 focus:border-[#ff003c] outline-none transition-colors" placeholder="Twitch, YouTube, TikTok..." required>
+        </div>
+        <div>
+          <label class="block text-xs font-bold tracking-widest text-gray-400 mb-2 uppercase">Message / 自我介紹</label>
+          <textarea class="w-full bg-zinc-900 border border-zinc-800 p-3 focus:border-[#ff003c] outline-none transition-colors h-32" required></textarea>
+        </div>
+        <button type="submit" class="w-full bg-[#ff003c] py-4 font-black font-oswald tracking-widest hover:bg-white hover:text-black transition-all">SUBMIT APPLICATION</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 頁尾 -->
+<footer class="py-16 px-6 border-t border-white/5">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+    <div>
+      <div class="text-3xl font-black font-oswald italic mb-4">TPD<span class="text-[#ff003c]">ESPORTS</span></div>
+      <p class="text-gray-500 text-sm">© 2025 TPD ESPORTS Inc. All Rights Reserved.</p>
+    </div>
+    <div class="flex space-x-8 text-2xl">
+      <a href="#" class="hover:text-[#ff003c] transition-colors"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" class="hover:text-[#ff003c] transition-colors"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="hover:text-[#ff003c] transition-colors"><i class="fab fa-twitch"></i></a>
+      <a href="#" class="hover:text-[#ff003c] transition-colors"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="text-right">
+      <a href="#" class="text-xs text-gray-500 hover:text-white block mb-2">Privacy Policy</a>
+      <a href="#" class="text-xs text-gray-500 hover:text-white block">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<!-- 通知小元件 -->
+<div id="notification" class="fixed bottom-10 right-10 bg-white text-black px-6 py-3 rounded-sm font-bold translate-y-20 transition-transform duration-300 z-[100] shadow-xl">
+  消息已送出！我們會盡快與您聯繫。
+</div>
+
+<script>
+  // 1. 滾動偵測顯示動畫
+  const observerOptions = {
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // 2. 手機版選單開關邏輯
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  const toggleMenu = () => {
+    mobileMenu.classList.toggle('hidden-menu');
+    document.body.style.overflow = mobileMenu.classList.contains('hidden-menu') ? 'auto' : 'hidden';
+  };
+
+  menuBtn.addEventListener('click', toggleMenu);
+  closeBtn.addEventListener('click', toggleMenu);
+
+  // 點擊選單連結後自動關閉
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+
+  // 3. 模擬表單提交
+  const recruitForm = document.getElementById('recruitForm');
+  const notification = document.getElementById('notification');
+
+  recruitForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // 顯示通知
+    notification.classList.remove('translate-y-20');
+    notification.classList.add('translate-y-0');
+
+    // 3秒後隱藏並重置
+    setTimeout(() => {
+      notification.classList.add('translate-y-20');
+      notification.classList.remove('translate-y-0');
+      recruitForm.reset();
+    }, 3000);
+  });
+
+  // 4. 導航欄平滑捲動
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+
+      e.preventDefault();
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+</body>
+</html>
